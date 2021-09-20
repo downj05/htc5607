@@ -1,0 +1,46 @@
+Planning:
+	Requirement Gathering
+	Gather buisiness use case description
+
+Analysis:
+	Design gantt-chart:
+		Create milestones
+		create tasks
+		create subtasks
+		allocate time
+	Select tools:
+		language
+		database
+		gui framework
+	Setup version control:
+		setup github account
+		create repository
+
+Design:
+	Create system use case narratives:
+		Use case 11, "Add course",
+		Use case 12, "Update course",
+		use case 13, "delete course",
+		use case 14, "produce course report",
+		use case 21, "enter result",
+		use case 22, "add programme",
+		use case 23, "update programme",
+		use case 24, "delete programme"
+	Create user interface design:
+		main menu,
+		add course screen,
+		update course screen,
+		delete course screen,
+		produce course report screen,
+		enter result screen,
+		add programme screen,
+		update programme screen,
+		delete programme screen
+	database design:
+		
+		
+	
+Coding
+Testing
+Training Materials
+Technical Report
