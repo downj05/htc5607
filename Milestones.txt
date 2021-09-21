@@ -1,13 +1,29 @@
 Planning:
+	Start technical report
 	Requirement Gathering
-	Gather buisiness use case description
-
+	Gather case study information
+	Log requirement gathering and case study information gathering in technical report
+	Create buisiness use case narratives:
+		Use case 11, "Add course",
+		Use case 12, "Update course",
+		use case 13, "delete course",
+		use case 14, "produce course report",
+		use case 21, "enter result",
+		use case 22, "add programme",
+		use case 23, "update programme",
+		use case 24, "delete programme"
+	log buisiness use case narrative creation in technical report
+	
 Analysis:
 	Design gantt-chart:
 		Create milestones
 		create tasks
 		create subtasks
 		allocate time
+	log gantt chart in technical report
+	Design risk assessment:
+		Create risk and issues register
+	log risk assessment and risks in technical report
 	Select tools:
 		language
 		database
@@ -17,6 +33,7 @@ Analysis:
 		create repository
 
 Design:
+	Create use case diagram
 	Create system use case narratives:
 		Use case 11, "Add course",
 		Use case 12, "Update course",
@@ -26,8 +43,28 @@ Design:
 		use case 22, "add programme",
 		use case 23, "update programme",
 		use case 24, "delete programme"
+	Create activity diagrams:
+		main menu screen activity diagram,
+		add course screen activity diagram,
+		update course screen activity diagram,
+		delete course screen activity diagram,
+		produce course report screen activity diagram,
+		enter result screen activity diagram,
+		add programme screen activity diagram,
+		update programme screen activity diagram,
+		delete programme screen activity diagram
+	create sequence diagrams:
+		main menu screen sequence diagram,
+		add course screen sequence diagram,
+		update course screen sequence diagram,
+		delete course screen sequence diagram,
+		produce course report screen sequence diagram,
+		enter result screen sequence diagram,
+		add programme screen sequence diagram,
+		update programme screen sequence diagram,
+		delete programme screen sequence diagram
 	Create user interface design:
-		main menu,
+		main menu screen,
 		add course screen,
 		update course screen,
 		delete course screen,
@@ -37,10 +74,47 @@ Design:
 		update programme screen,
 		delete programme screen
 	database design:
+		datadictionary
+		entity relationship diagram 
+		class diagram
+	create deployment diagram
+	test plan design:
+		database testplan
+		main menu testplan
+		add course testplan
+		update course testplan
+		delete course testplan
+		produce course testplan
+		enter result testplan
+		add programme testplan
 		
-		
-	
-Coding
-Testing
+Development:
+	database:
+		develop database,
+		test database
+	create datacontroller
+	main menu:
+		code main menu,
+		test main menu
+	course use cases:
+		code add course,
+		test add course screen,
+		code update course screen,
+		test update course screen,
+		code delete course screen,
+		test delete course screen,
+		code course report screen,
+		test course report screen
+	result use case:
+		code enter result screen,
+		test enter result screen
+	programme use cases:
+		code add programme screen,
+		test add programme screen,
+		code update programme screen,
+		test update programme screen,
+		code delete programme screen,
+		test delete programme screen
+
 Training Materials
 Technical Report
