@@ -2,7 +2,6 @@ Planning:
 	Start technical report
 	Requirement Gathering
 	Gather case study information
-	Log requirement gathering and case study information gathering in technical report
 	Create buisiness use case narratives:
 		Use case 11, "Add course",
 		Use case 12, "Update course",
@@ -12,8 +11,6 @@ Planning:
 		use case 22, "add programme",
 		use case 23, "update programme",
 		use case 24, "delete programme"
-	log buisiness use case narrative creation in technical report
-	
 Analysis:
 	Design gantt-chart:
 		Create milestones
@@ -31,7 +28,6 @@ Analysis:
 	Setup version control:
 		setup github account
 		create repository
-
 Design:
 	Create use case diagram
 	Create system use case narratives:
@@ -86,8 +82,7 @@ Design:
 		delete course testplan
 		produce course testplan
 		enter result testplan
-		add programme testplan
-		
+		add programme testplan		
 Development:
 	database:
 		develop database,
@@ -115,6 +110,7 @@ Development:
 		test update programme screen,
 		code delete programme screen,
 		test delete programme screen
-
 Training Materials
+	create training video
 Technical Report
+	conclude technical report
