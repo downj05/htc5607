@@ -1,4 +1,4 @@
-Planning:
+ Planning:
 	Start technical report
 	Requirement Gathering
 	Gather case study information
