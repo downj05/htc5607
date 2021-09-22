@@ -17,10 +17,8 @@ Analysis:
 		create tasks
 		create subtasks
 		allocate time
-	log gantt chart in technical report
 	Design risk assessment:
 		Create risk and issues register
-	log risk assessment and risks in technical report
 	Select tools:
 		language
 		database
@@ -82,7 +80,10 @@ Design:
 		delete course testplan
 		produce course testplan
 		enter result testplan
-		add programme testplan		
+		add programme testplan
+		update programme testplan
+		delete programme testplan
+		
 Development:
 	database:
 		develop database,
@@ -112,5 +113,13 @@ Development:
 		test delete programme screen
 Training Materials
 	create training video
+Deployment
+	configure hardware
+	configure software
+	deploy product
+
 Technical Report
 	conclude technical report
+
+Launch
+	launch product
