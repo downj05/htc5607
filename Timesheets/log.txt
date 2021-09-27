@@ -1,5 +1,9 @@
-1:00pm, system analysis introduction
+MONDAY
+1:00pm - 2:00pm system analysis introduction
 - use case diagram
 - design use case narratives
 - analysis use case narratives
 - activity diagrams
+- class diagrams
+4:00pm - 6:00pm use case diagram
+6:00pm - 6:30pm design use case narratives
