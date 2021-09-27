@@ -1,0 +1,5 @@
+1:00pm, system analysis introduction
+- use case diagram
+- design use case narratives
+- analysis use case narratives
+- activity diagrams
