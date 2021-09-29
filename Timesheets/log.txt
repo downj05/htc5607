@@ -7,3 +7,9 @@ MONDAY
 - class diagrams
 4:00pm - 6:00pm use case diagram
 6:00pm - 6:30pm design use case narratives
+
+TUESDAY
+3:00pm - 6:00pm design use case narratives
+
+WEDNESDAY
+3:45pm - 4:00pm meeting
