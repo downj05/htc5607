@@ -13,3 +13,8 @@ TUESDAY
 
 WEDNESDAY
 3:45pm - 4:00pm meeting
+5:00pm - 7:00pm fix design use case narratives
+THURSDAY
+5:00pm - 8:00pm fix technical report
+FRIDAY
+4:00pm - 7:00pm create activity diagrams
