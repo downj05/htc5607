@@ -1,20 +1,12 @@
 MONDAY
-1:00pm - 2:00pm system analysis introduction
-- use case diagram
-- design use case narratives
-- analysis use case narratives
-- activity diagrams
-- class diagrams
-4:00pm - 6:00pm use case diagram
-6:00pm - 6:30pm design use case narratives
-
+1:00PM - 5:00PM Design Level Use Case Narratives
 TUESDAY
-3:00pm - 6:00pm design use case narratives
-
+1:00PM - 2:00PM Design Level Use Case Narratives
+2:00PM - 5:00 PM Database Design
 WEDNESDAY
-3:45pm - 4:00pm meeting
-5:00pm - 7:00pm fix design use case narratives
+1:00PM - 4:30PM Database Design
 THURSDAY
-5:00pm - 8:00pm fix technical report
+1:45PM - 2:00PM Meeting
+2:00PM - 5:00PM Sequence Diagrams
 FRIDAY
-4:00pm - 7:00pm create activity diagrams
+3:00PM - 6:30PM Sequence Diagrams
