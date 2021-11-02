@@ -1,12 +1,9 @@
-MONDAY
-1:00PM - 5:00PM Design Level Use Case Narratives
 TUESDAY
-1:00PM - 2:00PM Design Level Use Case Narratives
-2:00PM - 5:00 PM Database Design
+1:00PM - 4:30PM User Interface Designs
 WEDNESDAY
-1:00PM - 4:30PM Database Design
+6:00PM - 10:00PM User Interace Designs
 THURSDAY
-1:45PM - 2:00PM Meeting
-2:00PM - 5:00PM Sequence Diagrams
+3:30PM - 3:45PM MEETING
+4:00PM - 7:00PM DATABASE TEST CASES
 FRIDAY
-3:00PM - 6:30PM Sequence Diagrams
+5:00PM - 9:00PM UI TEST CASES
