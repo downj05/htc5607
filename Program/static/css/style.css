@@ -1,0 +1,36 @@
+.navbar {
+    border-radius: 0;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    width: 50vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media only screen and (max-width: 600px) {
+    .container {width: 100vw}
+}
+
+.dark-radio-group {
+    left-padding: 2px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;
+
+}
+
+.form-group.required .control-label:before{
+
+   color: red;
+   content: "*";
+   position: absolute;
+   margin-left: -8px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}

@@ -2,81 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e07b96c-3497-487d-8197-05e6406681e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_002d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_003d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_004d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_005d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_006d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_007d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams.vpp.bak_008d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Add Course.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Add Programme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Delete Course.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Delete Programme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Enter Result.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Produce Courses Report.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Update Course.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Activity Diagrams/Update Programme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_002d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_003d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_004d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_005d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagram.vpp.bak_006d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Deployment Diagram.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Deployment Diagram.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Deployment Diagram.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Deployment Diagram.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Jason Down Technical Report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../Jason Down Technical Report.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logical ERD.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logical ERD.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logical ERD.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Logical ERD.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Milestones.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_002d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_003d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_004d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_005d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_006d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_007d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_008d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_009d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_010d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_011d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_012d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_013d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_014d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_015d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sequence Diagrams.vpp.bak_016d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Timesheets/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Timesheets/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram Assignments.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram.vpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram.vpp.bak_000f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram.vpp.bak_001d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Use Case Diagram.vpp.bak_002d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Add Course.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Add Programme.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Delete Course.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Delete Programme.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Enter Result.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Produce Courses Report.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Update Course.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../User Interface Diagrams/Update Programme.psd" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/addcourse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.db" beforeDir="false" afterPath="$PROJECT_DIR$/main.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/tables.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -88,9 +36,89 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Random Stuff\School Stuff\Unitec\HTCS5607\htc5607\Program" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Program" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Program" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" nameIsGenerated="true">
+      <option name="flaskDebug" value="true" />
+      <module name="Program" />
+      <option name="target" value="app.py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Burger\AppData\Local\Programs\Python\Python39\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Flask server.Flask (app.py)" />
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.test" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -101,10 +129,27 @@
       <option name="presentableId" value="Default" />
       <updated>1635840100990</updated>
       <workItem from="1635840102371" duration="593000" />
+      <workItem from="1635866846219" duration="26247000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Program$app.coverage" NAME="app Coverage Results" MODIFIED="1635897488816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Program$test.coverage" NAME="test Coverage Results" MODIFIED="1635888288576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Program$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1635869460452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

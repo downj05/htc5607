@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+
+
+    <h1>Dashboard</h1>
+    <hr>
+    <p>Please select a form:</p>
+    <div class="btn-group" role="group" aria-label="...">
+        <a href="{{url_for('addcourse')}}" class="btn btn-default" role="button">Add Course</a>
+        <a href="#" class="btn btn-default" role="button">Update Course</a>
+        <button type="button" class="btn btn-default">Delete Course</button>
+        <button type="button" class="btn btn-default">Course Report</button>
+    </div>
+    <br><br>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">Add Programme</button>
+        <button type="button" class="btn btn-default">Update Programme</button>
+        <button type="button" class="btn btn-default">Delete Programme</button>
+    </div>
+    <br><br>
+    <button type="button" class="btn btn-default">Enter Result</button>
+</div>
+
+{% endblock %}
