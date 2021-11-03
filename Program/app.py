@@ -12,9 +12,12 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
         if check_login(username, password) is True:
-            return "Logged in!"
+            flash('Logged In!')
+            return redirect(url_for('home'))
         else:
-            return "Incorrect!"
+            flash('Incorrect!')
+            return redirect(url_for('login'))
+
 @app.route('/home')
 def home():
     return render_template('home.html')
