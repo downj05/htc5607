@@ -7,6 +7,17 @@ try:
 except Exception as e:
     print(f"Error connecting to database: {e}")
 
+
+def user_exists(username):
+    sql_cmd = '''SELECT username FROM USERS WHERE username = ?'''
+    cur = conn.cursor()
+    cur.execute(sql_cmd, (username,))
+    try:
+        if cur.fetchone()[0] is not None:
+            return True
+    except TypeError:
+        return False
+
 def check(username, password):
 
     sql_cmd = '''SELECT pass_hash, pass_salt FROM USERS'''
