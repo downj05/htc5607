@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block customStyle %}
+<style>
+.form-group.required .control-label:before {
+   color: red;
+   content: "";
+   position: absolute;
+   margin-left: -8px;
+}
+</style> <!-- dont show required dot, since its not actually required to update any fields -->
+{% endblock %}
+
+{% block title %}Update Course{% endblock %}
+{% block content %}
+
+<div class="container">
+
+    <h1>Update Course</h1>
+    <hr>
+
+    <form class="form-horizontal" role="form" action="{{url_for('updatecourse')}}" method="POST">
+
+        <div class="form-group required">
+            <label id="coursesDropdownLabel" class="col-sm-2 control-label">Courses:</label>
+            <div class="col-sm-8">
+                <select class="form-control" id="selectedCourse" name="selectedCourse" required>
+                    <option selected value="">Select a course</option>
+                    {% for course in courses %}
+                    <option value="{{course.id}}">{{course.id}}    {{course.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div> <!-- Courses Dropdown -->
+
+        <div class="form-group required">
+            <label for="courseID" class="col-sm-2 control-label">Course ID:</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="courseID" name="courseID" placeholder="ID" maxlength="32" minlength="1" readonly>
+            </div>
+        </div> <!-- Course ID-->
+
+        <div class="form-group required">
+            <label for="courseName" class="col-sm-2 control-label">Course Name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course name" maxlength="32" minlength="1" required>
+            </div>
+        </div> <!-- Course Name -->
+
+        <div class="form-group required">
+            <label for="credits" class="col-sm-2 control-label">Credits:</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="credits" name="credits" placeholder="Credits" min="5" max="120" required>
+            </div>
+        </div> <!-- Credits -->
+
+        <div class="form-group required">
+            <label for="fee" class="col-sm-2 control-label">Fee:</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="fee" name="fee" placeholder="Fee" min="200.00" max="8000.00" step="0.5" required>
+            </div>
+        </div> <!-- Fee -->
+
+        <div class="form-group required">
+            <label class="col-sm-2 control-label">Status:</label>
+            <div class="col-sm-5 btn-group" id="status" role="group" >
+                <input type="radio" id="current" name="status" value="Current" required>
+                <label for="current">Current</label>
+                <input type="radio" id="suspended" name="status" value="Suspended" required>
+                <label for="suspended">Suspended</label>
+            </div>
+        </div> <!-- Status Radio Select -->
+
+        <div class="form-group required">
+            <label for="programmeName" class="col-sm-2 control-label">Programme Name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="programmeName" name="programmeName" placeholder="Programme name" maxlength="32" minlength="1" readonly>
+            </div>
+        </div> <!-- Programme Name -->
+
+        <div class="form-group">
+
+            <div class="col-sm-10">
+
+                <button type="submit" class="btn btn-primary">Update Course</button>
+            </div>
+
+            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>
+        </div> <!-- Buttons -->
+
+    </form>
+</div>
+
+<script src="{{url_for('static', filename='js/updatecourse.js')}}"></script>
+{% endblock %}

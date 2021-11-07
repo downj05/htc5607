@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Add Course{% endblock %}
 {% block content %}
-{% for msg in get_flashed_messages()%}
-  <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      {{msg}}
-</div>
-  {% endfor %}
+
 <div class="container">
-
-
-    <h1>Dashboard</h1>
+    <h1>Add Course</h1>
     <hr>
 
     <form class="form-horizontal" role="form" action="{{url_for('addcourse')}}" method="POST">
@@ -20,21 +13,21 @@
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course name" maxlength="32" minlength="1" required>
             </div>
-        </div>
+        </div> <!-- Course Name -->
 
         <div class="form-group required">
             <label for="credits" class="col-sm-2 control-label">Credits:</label>
             <div class="col-sm-3">
                 <input type="number" class="form-control" id="credits" name="credits" placeholder="Credits" min="5" max="120" required>
             </div>
-        </div>
+        </div> <!-- Credits -->
 
         <div class="form-group required">
             <label for="fee" class="col-sm-2 control-label">Fee:</label>
             <div class="col-sm-3">
                 <input type="number" class="form-control" id="fee" name="fee" placeholder="Fee" min="200.00" max="8000.00" step="0.5" required>
             </div>
-        </div>
+        </div> <!-- Fee -->
 
         <div class="form-group required">
             <label class="col-sm-2 control-label">Status:</label>
@@ -44,32 +37,30 @@
                 <input type="radio" id="suspended" name="status" value="Suspended" required>
                 <label for="suspended">Suspended</label>
             </div>
-        </div>
+        </div> <!-- Status Radio Select -->
 
         <div class="form-group required">
             <label class="col-sm-2 control-label">Programme:</label>
-            <div class="col-sm-3">
-                <select id="programme" name="programme" required>
+            <div class="col-sm-5">
+                <select class="form-control" id="programme" name="programme" required>
                     <option selected value="">Select a programme</option>
                     {% for programme in programmes %}
                     <option value="{{programme.id}}">{{programme.name}} {{programme.level}}</option>
                     {% endfor %}
                 </select>
             </div>
-        </div>
-        <small style="color: red">* Required Fields</small>
+        </div> <!-- Programme Dropdown -->
+
+        <small style="color: red">* Required Fields</small> <!-- Required small text -->
+
         <div class="form-group">
-
             <div class="col-sm-10">
-
                 <button type="submit" class="btn btn-primary">Add Course</button>
-            </div>
-
-            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>
-        </div>
+            </div> <!-- Add Course Button -->
+            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a> <!-- Cancel Button -->
+        </div> <!-- Buttons -->
 
     </form>
 </div>
-
 
 {% endblock %}

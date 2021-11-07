@@ -60,7 +60,7 @@ def unauthorized_handler():
 @app.route('/logout')
 def logout():
     flask_login.logout_user()
-    flash('Logged out')
+    flash('Logged out!')
     return redirect(url_for('login'))
 
 
@@ -73,6 +73,9 @@ def home():
 @app.route('/addcourse', methods=['GET','POST'])
 @login_required
 def addcourse():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
     if request.method == 'GET':
         return render_template('addcourse.html', programmes=tables.get_programmes_list())
     else:
@@ -86,6 +89,65 @@ def addcourse():
         flash("Course added successfully")
         return redirect(url_for('addcourse'))
 
+
+@app.route('/updatecourse', methods=['GET','POST'])
+@login_required
+def updatecourse():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('updatecourse.html', courses=tables.get_courses_list())
+    else:
+        courseID = request.form["courseID"]
+        courseName = request.form["courseName"]
+        credits = request.form["credits"]
+        fee = request.form["fee"]
+        status = request.form["status"].lower()
+        # fetch course from id, get its programme id
+        old_course = tables.get_course_from_id(courseID)
+
+        course = tables.Course((courseID, courseName,credits,fee,status,old_course.programmeID))
+        course.update()
+        flash("Course updated successfully")
+        return redirect(url_for('updatecourse'))
+
+@app.route('/deletecourse', methods=['GET', 'POST'])
+@login_required
+def deletecourse():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('deletecourse.html', courses=tables.get_courses_list())
+
+@app.route('/api/<command>', methods=['GET', 'POST'])
+@login_required
+def api(command):
+    if command == 'course':
+        request_json = request.get_json()
+        id = request_json['id']
+        course = tables.get_course_from_id(id)
+        course_json = {
+            "id": course.id,
+            "name": course.name,
+            "credits": course.credits,
+            "fee": course.fee,
+            "status": course.status,
+            "programmeID": course.programmeID
+        }
+        return course_json
+
+    elif command == 'programme':
+        request_json = request.get_json()
+        id = request_json['id']
+        programme = tables.get_programme_from_id(id)
+        programme_json = {
+            "id": programme.id,
+            "name": programme.name,
+            "level": programme.level
+        }
+        return programme_json
 
 if __name__ == ('__main__'):
     app.config["TEMPLATES_AUTO_RELOAD"] = True

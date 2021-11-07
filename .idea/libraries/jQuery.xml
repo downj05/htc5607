@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="jQuery" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <option name="frameworkVersion" value="1.12.4" />
+    </properties>
+    <CLASSES />
+    <DOCUMENTATION>
+      <root url="https://api.jquery.com/category/version/1.12-and-2.2/" />
+    </DOCUMENTATION>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
