@@ -44,13 +44,22 @@ def get_programmes_list():
     return [Programme(tuple) for tuple in get_all_rows('PROGRAMME')]
 
 
-def get_courses_list():
+def get_courses_list(noassigments=False):
     """
     Gets all of the rows from the COURSE table, turns them into
-    Course objects, returns a list
+    Course objects, returns a list. The user can specify wether
+    these courses have any assignments aswell.
     :return: list
     """
-    return [Course(tuple) for tuple in get_all_rows('COURSE')]
+    if noassigments is False:
+        return [Course(tuple) for tuple in get_all_rows('COURSE')]
+    else:
+        '''
+        Only returns courses who's courseID does NOT appear in
+        the ASSIGNMENT table AND the ASSESSMENT table.
+        '''
+        course_ids =
+
 
 def get_course_from_id(id):
     """
@@ -64,6 +73,7 @@ def get_course_from_id(id):
     cur.execute(sql_command, (id,))
     return Course(cur.fetchone())
 
+
 def get_programme_from_id(id):
     """
     Gets a programme object from an ID.
@@ -75,6 +85,7 @@ def get_programme_from_id(id):
     cur = conn.cursor()
     cur.execute(sql_command, (id,))
     return Programme(cur.fetchone())
+
 
 class Programme:
     """
@@ -111,4 +122,9 @@ class Course:
     def update(self):
         sql_cmd = f'''UPDATE COURSE SET courseName = ?, credits = ?, fee = ?, status = ? WHERE courseID = ?'''
         values = (self.name, self.credits, self.fee, self.status, self.id)
+        execute(sql_cmd, values)
+
+    def delete(self):
+        sql_cmd = f'''DELETE FROM COURSE WHERE courseID = ?'''
+        values = (self.id,)
         execute(sql_cmd, values)

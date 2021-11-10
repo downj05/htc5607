@@ -46,7 +46,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{url_for('addcourse')}}">Add Course</a></li>
             <li><a href="{{url_for('updatecourse')}}">Update Course</a></li>
-            <li><a href="#">Delete Course</a></li>
+            <li><a href="{{url_for('deletecourse')}}">Delete Course</a></li>
             <li><a href="#">Course Report</a></li>
           </ul>
         </li>
@@ -80,5 +80,14 @@
   {% block content %}
   {% endblock %}
 
+{% if continuePrompt %}
+    <script>
+        setTimeout(function (){
+            if (!window.confirm("{{ continueMessage }}")) {
+                    window.location.href = '{{ url_for('home') }}';
+                }
+        },250)
+    </script>
+{% endif %}
   </body>
 </html>

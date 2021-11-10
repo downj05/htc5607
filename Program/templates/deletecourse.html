@@ -9,16 +9,14 @@
 }
 </style> <!-- dont show required dot, since its not actually required to update any fields -->
 {% endblock %}
-
-{% block title %}Update Course{% endblock %}
+{% block title %}Delete Course{% endblock %}
 {% block content %}
 
 <div class="container">
+    <h1>Delete Course</h1>
 
-    <h1>Update Course</h1>
     <hr>
-
-    <form class="form-horizontal" id="updateCourseForm" role="form" action="{{url_for('updatecourse')}}" method="POST">
+    <form class="form-horizontal" id="deleteCourseForm" role="form" action="{{url_for('deletecourse')}}" method="POST">
 
         <div class="form-group required">
             <label id="coursesDropdownLabel" class="col-sm-2 control-label">Courses:</label>
@@ -42,53 +40,36 @@
         <div class="form-group required">
             <label for="courseName" class="col-sm-2 control-label">Course Name:</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course name" maxlength="32" minlength="1" required>
+                <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course name" maxlength="32" minlength="1" readonly>
             </div>
         </div> <!-- Course Name -->
 
         <div class="form-group required">
             <label for="credits" class="col-sm-2 control-label">Credits:</label>
             <div class="col-sm-3">
-                <input type="number" class="form-control" id="credits" name="credits" placeholder="Credits" min="5" max="120" required>
+                <input type="number" class="form-control" id="credits" name="credits" placeholder="Credits" min="5" max="120" readonly>
             </div>
         </div> <!-- Credits -->
 
         <div class="form-group required">
-            <label for="fee" class="col-sm-2 control-label">Fee:</label>
-            <div class="col-sm-3">
-                <input type="number" class="form-control" id="fee" name="fee" placeholder="Fee" min="200.00" max="8000.00" step="0.5" required>
-            </div>
-        </div> <!-- Fee -->
-
-        <div class="form-group required">
             <label class="col-sm-2 control-label">Status:</label>
-            <div class="col-sm-5 btn-group" id="status" role="group" >
-                <input type="radio" id="current" name="status" value="Current" required>
+            <div class="col-sm-5 btn-group" role="group">
+                <input type="radio" id="current" name="status" value="Current" disabled='disabled'>
                 <label for="current">Current</label>
-                <input type="radio" id="suspended" name="status" value="Suspended" required>
+                <input type="radio" id="suspended" name="status" value="Suspended" disabled='disabled'>
                 <label for="suspended">Suspended</label>
             </div>
         </div> <!-- Status Radio Select -->
 
-        <div class="form-group required">
-            <label for="programmeName" class="col-sm-2 control-label">Programme Name:</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" id="programmeName" name="programmeName" placeholder="Programme name" maxlength="32" minlength="1" readonly>
-            </div>
-        </div> <!-- Programme Name -->
-
         <div class="form-group">
-
             <div class="col-sm-10">
-
-                <button type="submit" class="btn btn-primary">Update Course</button>
-            </div>
-
-            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>
+                <button type="submit" class="btn btn-warning">Delete Course</button>
+            </div> <!-- Add Course Button -->
+            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a> <!-- Cancel Button -->
         </div> <!-- Buttons -->
 
     </form>
 </div>
 
-<script src="{{url_for('static', filename='js/updatecourse.js')}}"></script> <!-- load js -->
+<script src="{{url_for('static', filename='js/deletecourse.js')}}"></script> <!-- load js -->
 {% endblock %}

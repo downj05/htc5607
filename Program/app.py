@@ -87,7 +87,8 @@ def addcourse():
         course = tables.Course((None, courseName,credits,fee,status,programmeID))
         course.add()
         flash("Course added successfully")
-        return redirect(url_for('addcourse'))
+        return render_template('addcourse.html', programmes=tables.get_programmes_list(), continuePrompt=True,
+                               continueMessage="Would you like to add another course?")
 
 
 @app.route('/updatecourse', methods=['GET','POST'])
@@ -109,8 +110,9 @@ def updatecourse():
 
         course = tables.Course((courseID, courseName,credits,fee,status,old_course.programmeID))
         course.update()
-        flash("Course updated successfully")
-        return redirect(url_for('updatecourse'))
+        flash("Course updated successfully!")
+        return render_template('updatecourse.html', courses=tables.get_courses_list(), continuePrompt=True,
+                               continueMessage="Would you like to update another course?")
 
 @app.route('/deletecourse', methods=['GET', 'POST'])
 @login_required
@@ -120,6 +122,13 @@ def deletecourse():
         return redirect(url_for('home'))
     if request.method == 'GET':
         return render_template('deletecourse.html', courses=tables.get_courses_list())
+    else:
+        courseID = request.form["courseID"]
+        course = tables.get_course_from_id(courseID)
+        course.delete()
+        flash("Course deleted successfully!")
+        return render_template('deletecourse.html', courses=tables.get_courses_list(),
+                               continuePrompt=True, continueMessage="Would you like to delete another course?")
 
 @app.route('/api/<command>', methods=['GET', 'POST'])
 @login_required
