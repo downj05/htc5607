@@ -58,7 +58,13 @@ def get_courses_list(noassigments=False):
         Only returns courses who's courseID does NOT appear in
         the ASSIGNMENT table AND the ASSESSMENT table.
         '''
-        course_ids =
+        sql_command = '''SELECT * FROM COURSE AS C
+         WHERE C."courseID" NOT IN (SELECT "courseID" FROM ASSIGNMENT)
+          AND C."courseID" NOT IN (SELECT "courseID" FROM ASSESSMENT)
+		  AND C."courseID" NOT IN (SELECT "courseID" FROM ENROLMENT)'''
+        cur = conn.cursor()
+        cur.execute(sql_command)
+        return [Course(tuple) for tuple in cur.fetchall()]
 
 
 def get_course_from_id(id):
@@ -86,6 +92,19 @@ def get_programme_from_id(id):
     cur.execute(sql_command, (id,))
     return Programme(cur.fetchone())
 
+def get_enrolments_from_course(course):
+    course_id = course.id
+    sql_cmd = f'''SELECT * FROM ENROLMENT AS E WHERE E."courseID" IN (SELECT "courseID" FROM COURSE WHERE "courseID" == ?)'''
+    cur = conn.cursor()
+    cur.execute(sql_cmd, (course_id,))
+    return cur.fetchall()
+
+def get_assessments_from_course(course):
+    course_id = course.id
+    sql_cmd = f'''SELECT * FROM ASSESSMENT AS E WHERE E."courseID" IN (SELECT "courseID" FROM COURSE WHERE "courseID" == ?)'''
+    cur = conn.cursor()
+    cur.execute(sql_cmd, (course_id,))
+    return cur.fetchall()
 
 class Programme:
     """

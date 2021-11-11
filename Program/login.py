@@ -32,7 +32,6 @@ def check(username, password):
         return False
 
 
-
 def register(username, password):
     salt = str(int(time()))
     to_hash = password+salt

@@ -114,6 +114,7 @@ def updatecourse():
         return render_template('updatecourse.html', courses=tables.get_courses_list(), continuePrompt=True,
                                continueMessage="Would you like to update another course?")
 
+
 @app.route('/deletecourse', methods=['GET', 'POST'])
 @login_required
 def deletecourse():
@@ -121,14 +122,63 @@ def deletecourse():
         flash('No Permission!')
         return redirect(url_for('home'))
     if request.method == 'GET':
-        return render_template('deletecourse.html', courses=tables.get_courses_list())
+        return render_template('deletecourse.html', courses=tables.get_courses_list(True))
     else:
         courseID = request.form["courseID"]
         course = tables.get_course_from_id(courseID)
         course.delete()
         flash("Course deleted successfully!")
-        return render_template('deletecourse.html', courses=tables.get_courses_list(),
+        return render_template('deletecourse.html', courses=tables.get_courses_list(True),
                                continuePrompt=True, continueMessage="Would you like to delete another course?")
+
+
+@app.route('/coursereport', methods=['GET', 'POST'])
+@login_required
+def coursereport():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('coursereport.html')
+    else:
+        # Generate report
+        courses = tables.get_courses_list()
+        response = {
+            "courses": [],
+        }
+        for course in courses:
+            enrolment_count = len(tables.get_enrolments_from_course(course))
+            assessment_count = len(tables.get_assessments_from_course(course))
+            programme_name = tables.get_programme_from_id(course.programmeID).name
+            response_object = {
+                "name": course.name,
+                "id": course.id,
+                "credits": course.credits,
+                "status": course.status,
+                "fee": course.fee,
+                "programme": programme_name,
+                "enrolments": enrolment_count,
+                "assessments": assessment_count
+            }
+            response["courses"].append(response_object)
+        return response
+
+@app.route('/addprogramme', methods=['GET','POST'])
+@login_required
+def addprogramme():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('addprogramme.html')
+    else:
+        name = request.form["programmeName"]
+        level = request.form["level"]
+        programme = tables.Programme((None, name,level))
+        programme.add()
+        flash("Course added successfully")
+        return render_template('addprogramme.html', continuePrompt=True,
+                               continueMessage="Would you like to add another programme?")
 
 @app.route('/api/<command>', methods=['GET', 'POST'])
 @login_required
@@ -157,6 +207,7 @@ def api(command):
             "level": programme.level
         }
         return programme_json
+
 
 if __name__ == ('__main__'):
     app.config["TEMPLATES_AUTO_RELOAD"] = True

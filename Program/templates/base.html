@@ -39,28 +39,28 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-        <li class="active"><a href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a></li>
+        <li id="home"><a href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Course<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{url_for('addcourse')}}">Add Course</a></li>
-            <li><a href="{{url_for('updatecourse')}}">Update Course</a></li>
-            <li><a href="{{url_for('deletecourse')}}">Delete Course</a></li>
-            <li><a href="#">Course Report</a></li>
+            <li id="addcourse"><a href="{{url_for('addcourse')}}">Add Course</a></li>
+            <li id="updatecourse"><a href="{{url_for('updatecourse')}}">Update Course</a></li>
+            <li id="deletecourse"><a href="{{url_for('deletecourse')}}">Delete Course</a></li>
+            <li id="coursereport"><a href="{{url_for('coursereport')}}">Course Report</a></li>
           </ul>
         </li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programme<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Add Programme</a></li>
-            <li><a href="#">Update Programme</a></li>
-            <li><a href="#">Delete Programme</a></li>
+            <li id="addprogramme"><a href="{{ url_for('addprogramme') }}">Add Programme</a></li>
+            <li id="updateprogramme"><a href="#">Update Programme</a></li>
+            <li id="deleteprogramme"><a href="#">Delete Programme</a></li>
           </ul>
         </li>
 
-        <li><a href="#">Enter Result</a></li>
+        <li id="enterresult"><a href="#">Enter Result</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -89,5 +89,16 @@
         },250)
     </script>
 {% endif %}
+<script>
+  $(document).ready(function () {
+      let currentPageButton = $('#{{ request.endpoint }}')
+        currentPageButton.addClass("active");
+      let pageButtonOuterParent = currentPageButton.parent().parent()
+      console.log(pageButtonOuterParent.prop('tagName'))
+      if (pageButtonOuterParent.prop('tagName') === 'LI') {
+          pageButtonOuterParent.addClass("active");
+      }
+  })
+</script> <!-- activate the navbar button of the current page -->
   </body>
 </html>

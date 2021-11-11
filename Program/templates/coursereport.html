@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block customStyle %}
+<style>
+.form-group.required .control-label:before {
+   color: red;
+   content: "";
+   position: absolute;
+   margin-left: 0px;
+} /* dont have required dots*/
+
+#txtReport {
+    text-align: left;
+    padding-left: 5px;
+    font-family: "Arial";
+    height: 200px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 2px;
+    overflow-y:scroll;
+    padding-bottom: 200px;
+}
+/* txt report background, scroll bar */
+
+
+</style>
+{% endblock %}
+{% block title %}Course Report{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1>Produce Course Report</h1>
+
+    <hr>
+    <form class="form" id="courseReportForm" role="form">
+
+        <div class="form-group" id="txtReport">
+
+        </div> <!-- Courses Report Textbox -->
+
+        <div class="form-group">
+                <div class="pull-left">
+                    <button type="submit" class="btn btn-primary">Generate Report</button><!-- Add Course Button -->
+                </div>
+                <div class="pull-right">
+                    <a href="{{url_for('home')}}" class="btn btn-danger">Cancel</a> <!-- Cancel Button -->
+                </div>
+
+        </div> <!-- Buttons -->
+
+    </form>
+</div>
+<script src="{{url_for('static', filename='js/coursereport.js')}}"></script> <!-- load js -->
+{% endblock %}
