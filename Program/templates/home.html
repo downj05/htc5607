@@ -16,11 +16,11 @@
     <br><br>
     <div class="btn-group" role="group" aria-label="...">
         <a href="{{url_for('addprogramme')}}" class="btn btn-default" role="button">Add Programme</a>
-        <a href="#" class="btn btn-default" role="button">Update Programme</a>
-        <a href="#" class="btn btn-default" role="button">Delete Programme</a>
+        <a href="{{url_for('updateprogramme')}}" class="btn btn-default" role="button">Update Programme</a>
+        <a href="{{url_for('deleteprogramme')}}" class="btn btn-default" role="button">Delete Programme</a>
     </div>
     <br><br>
-    <button type="button" class="btn btn-default">Enter Result</button>
+    <a href="{{ url_for('enterresult') }}" class="btn btn-default" role="button">Enter Result</a>
 </div>
 
 {% endblock %}

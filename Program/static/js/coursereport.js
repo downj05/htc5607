@@ -7,9 +7,12 @@ function generateReport() {
         url: "/coursereport",
         success: function (response) {
             console.log("Got response!");
+            reportText.html('')
+            let reportHeadingHtml = '<br><h1>Balham College</h1>\n<h2 class="text-center">Courses Report</h2><br>'
+            reportText.html(reportText.html()+reportHeadingHtml)
             $.each(response["courses"], function (index, value){
                 console.log(`Adding course ${index} to report`)
-                let reportObjectHtml = `<h3>${value["name"]}</h3>\n` +
+                let reportObjectHtml = `<hr>\n<h3>${value["name"]}</h3>\n` +
                     '            <table class="table table-bordered">\n' +
                     '                <tr>\n' +
                     '                    <th>ID</th>\n' +
@@ -35,7 +38,7 @@ function generateReport() {
                     `                    <td>${value["enrolments"]}</td>\n` +
                     `                    <td>${value["assessments"]}</td>\n` +
                     '                </tr>\n' +
-                    '            </table>'
+                    '            </table><br>'
                 reportText.html(reportText.html()+reportObjectHtml)
             })
         }

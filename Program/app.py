@@ -1,4 +1,5 @@
 import flask_login
+from datetime import datetime
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_login import LoginManager, login_required
 import tables
@@ -163,6 +164,7 @@ def coursereport():
             response["courses"].append(response_object)
         return response
 
+
 @app.route('/addprogramme', methods=['GET','POST'])
 @login_required
 def addprogramme():
@@ -179,6 +181,66 @@ def addprogramme():
         flash("Course added successfully")
         return render_template('addprogramme.html', continuePrompt=True,
                                continueMessage="Would you like to add another programme?")
+
+
+@app.route('/updateprogramme', methods=['GET','POST'])
+@login_required
+def updateprogramme():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('updateprogramme.html.', programmes=tables.get_programmes_list())
+    else:
+        id = request.form["programmeID"]
+        name = request.form["programmeName"]
+        level = request.form["level"]
+
+        programme = tables.Programme((id, name, level))
+        programme.update()
+        flash("Programme updated successfully!")
+        return render_template('updateprogramme.html', programmes=tables.get_programmes_list(), continuePrompt=True,
+                               continueMessage="Would you like to update another programme?")
+
+
+@app.route('/deleteprogramme', methods=['GET', 'POST'])
+@login_required
+def deleteprogramme():
+    if flask_login.current_user.id != 'p_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('deleteprogramme.html', programmes=tables.get_programmes_list(True))
+    else:
+        programmeID = request.form["programmeID"]
+        programme = tables.get_programme_from_id(programmeID)
+        programme.delete()
+        flash("Programme deleted successfully!")
+        return render_template('deleteprogramme.html', programmes=tables.get_programmes_list(True),
+                               continuePrompt=True, continueMessage="Would you like to delete another programme?")
+
+
+@app.route('/enterresult', methods=['GET', 'POST'])
+@login_required
+def enterresult():
+    if flask_login.current_user.id != 'c_admin':
+        flash('No Permission!')
+        return redirect(url_for('home'))
+    if request.method == 'GET':
+        return render_template('enterresult.html', assessments=tables.get_assessments_list(),
+                               enrolments=tables.get_enrolments_list())
+    else:
+        selectedAssessment = request.form["selectedAssessment"]
+        selectedEnrolment = request.form["selectedEnrolment"]
+        resultMark = request.form["mark"]
+        resultDate = int(datetime.strptime(request.form["date"], '%Y-%m-%d').timestamp())
+
+        result = tables.Result((selectedAssessment,selectedEnrolment,resultDate,resultMark))
+        result.add()
+        flash("Result added successfully!")
+        return render_template('enterresult.html', assessments=tables.get_assessments_list(),
+                               enrolments=tables.get_enrolments_list(),continuePrompt=True,
+                               continueMessage="Would you like to enter another result?")
 
 @app.route('/api/<command>', methods=['GET', 'POST'])
 @login_required
@@ -207,6 +269,24 @@ def api(command):
             "level": programme.level
         }
         return programme_json
+
+    elif command == 'assessment':
+        request_json = request.get_json()
+        id = request_json['id']
+        assessment = tables.get_assessment_from_id(id)
+        assessment_json = {
+            "id": assessment.id,
+            "number": assessment.number,
+            "name": assessment.name,
+            "type": assessment.type,
+            "weighting": assessment.weighting,
+            "maximumMark": assessment.maximumMark,
+            "courseID": assessment.courseID,
+
+        }
+        if request_json['get_course_name']:
+            assessment_json['course_name'] = assessment.course_name
+        return assessment_json
 
 
 if __name__ == ('__main__'):

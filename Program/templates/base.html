@@ -55,12 +55,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programme<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li id="addprogramme"><a href="{{ url_for('addprogramme') }}">Add Programme</a></li>
-            <li id="updateprogramme"><a href="#">Update Programme</a></li>
-            <li id="deleteprogramme"><a href="#">Delete Programme</a></li>
+            <li id="updateprogramme"><a href="{{ url_for('updateprogramme') }}">Update Programme</a></li>
+            <li id="deleteprogramme"><a href="{{url_for('deleteprogramme')}}">Delete Programme</a></li>
           </ul>
         </li>
 
-        <li id="enterresult"><a href="#">Enter Result</a></li>
+        <li id="enterresult"><a href="{{ url_for('enterresult') }}">Enter Result</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">

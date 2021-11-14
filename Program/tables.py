@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import datetime
 
 database = 'main.db'
 try:
@@ -35,13 +36,43 @@ def get_all_rows(table):
     return cur.fetchall()
 
 
-def get_programmes_list():
+def get_enrolments_list():
     """
-    Gets all of the rows from the PROGRAMME table, and turns them
-    into Programme objects, returns a list
+    Returns a list of Enrolment objects from the
+    ENROLMENT table.
     :return: list
     """
-    return [Programme(tuple) for tuple in get_all_rows('PROGRAMME')]
+    return [Enrolment(tuple) for tuple in get_all_rows('ENROLMENT')]
+
+
+def get_assessments_list():
+    """
+    Returns a list of Assessment objects from the
+    ASSESSMENT table.
+    :return: list
+    """
+    return [Assessment(tuple) for tuple in get_all_rows('ASSESSMENT')]
+
+
+def get_programmes_list(noassignments=False):
+    """
+    Gets all of the rows from the PROGRAMME table, and turns them
+    into Programme objects, returns a list. Can specify wether the
+    rows fetched
+    :return: list
+    """
+    if noassignments is False:
+        return [Programme(tuple) for tuple in get_all_rows('PROGRAMME')]
+    else:
+        '''
+        Only returns programmes whos programmeID does NOT appear
+        in the courses table.
+        '''
+        sql_cmd = '''SELECT * FROM PROGRAMME AS P
+        WHERE P."programmeID" NOT IN (SELECT "programmeID" FROM COURSE)'''
+        cur = conn.cursor()
+        cur.execute(sql_cmd)
+        return [Programme(tuple) for tuple in cur.fetchall()]
 
 
 def get_courses_list(noassigments=False):
@@ -62,6 +93,7 @@ def get_courses_list(noassigments=False):
          WHERE C."courseID" NOT IN (SELECT "courseID" FROM ASSIGNMENT)
           AND C."courseID" NOT IN (SELECT "courseID" FROM ASSESSMENT)
 		  AND C."courseID" NOT IN (SELECT "courseID" FROM ENROLMENT)'''
+
         cur = conn.cursor()
         cur.execute(sql_command)
         return [Course(tuple) for tuple in cur.fetchall()]
@@ -92,6 +124,20 @@ def get_programme_from_id(id):
     cur.execute(sql_command, (id,))
     return Programme(cur.fetchone())
 
+
+def get_assessment_from_id(id):
+    """
+    Gets an assessment object from an ID
+    :param id:
+    :return: assessment
+    """
+    sql_command = f'''SELECT * FROM ASSESSMENT WHERE assessmentID=?'''
+
+    cur = conn.cursor()
+    cur.execute(sql_command, (id,))
+    return Assessment(cur.fetchone())
+
+
 def get_enrolments_from_course(course):
     course_id = course.id
     sql_cmd = f'''SELECT * FROM ENROLMENT AS E WHERE E."courseID" IN (SELECT "courseID" FROM COURSE WHERE "courseID" == ?)'''
@@ -99,12 +145,14 @@ def get_enrolments_from_course(course):
     cur.execute(sql_cmd, (course_id,))
     return cur.fetchall()
 
+
 def get_assessments_from_course(course):
     course_id = course.id
     sql_cmd = f'''SELECT * FROM ASSESSMENT AS E WHERE E."courseID" IN (SELECT "courseID" FROM COURSE WHERE "courseID" == ?)'''
     cur = conn.cursor()
     cur.execute(sql_cmd, (course_id,))
     return cur.fetchall()
+
 
 class Programme:
     """
@@ -118,6 +166,16 @@ class Programme:
     def add(self):
         sql_cmd = f'''INSERT INTO PROGRAMME(programmeName, level) VALUES(?, ?)'''
         values = (self.name, self.level)
+        execute(sql_cmd, values)
+
+    def update(self):
+        sql_cmd = f'''UPDATE PROGRAMME SET programmeName = ?, level = ? WHERE programmeID = ?'''
+        values = (self.name, self.level, self.id)
+        execute(sql_cmd, values)
+
+    def delete(self):
+        sql_cmd = f'''DELETE FROM PROGRAMME WHERE programmeID = ?'''
+        values = (self.id,)
         execute(sql_cmd, values)
 
 
@@ -147,3 +205,85 @@ class Course:
         sql_cmd = f'''DELETE FROM COURSE WHERE courseID = ?'''
         values = (self.id,)
         execute(sql_cmd, values)
+
+
+class Assessment:
+    """
+    Assessment class, has its attributes and a property
+    for getting a courses name from its ID.
+    """
+    def __init__(self, tuple=(None, None, None, None, None, None, None)):
+        self.id = tuple[0]
+        self.number = tuple[1]
+        self.name = tuple[2]
+        self.type = tuple[3]
+        self.weighting = tuple[4]
+        self.maximumMark = tuple[5]
+        self.courseID = tuple[6]
+
+    @property
+    def course_name(self):
+        # Gets a course name from the objects course id
+        sql_command = f'''SELECT courseName FROM COURSE WHERE courseID=?'''
+
+        cur = conn.cursor()
+        cur.execute(sql_command, (self.courseID,))
+        return cur.fetchone()[0]
+
+
+class Enrolment:
+    """
+    Enrolment class, has its attributes and takes in
+    a tuple upon creation. Has a year string property
+    to convert the timestamp into its year, also has
+    a student name property to get their name from the
+    objects student ID.
+    """
+    def __init__(self, tuple):
+        self.id = tuple[0]
+        self.year = tuple[1]
+        self.semester = tuple[2]
+        self.status = tuple[3]
+        self.studentID = tuple[4]
+        self.courseID = tuple[5]
+
+    @property
+    def year_string(self):
+        return datetime.utcfromtimestamp(self.year).strftime('%Y')
+
+    @property
+    def student_name(self):
+        # Gets a course name from the objects course id
+        sql_command = f'''SELECT firstName, lastName FROM STUDENT WHERE studentID=?'''
+
+        cur = conn.cursor()
+        cur.execute(sql_command, (self.studentID,))
+        firstName, lastName = cur.fetchone()
+        return firstName+" "+lastName
+
+
+class Result:
+    """
+    Result class, ties to the RESULT table, can be added
+    with the add method and is created with a tuple.
+    """
+    def __init__(self, tuple):
+        self.assessmentID = tuple[0]
+        self.enrolmentID = tuple[1]
+        self.resultDate = tuple[2]
+        self.mark = tuple[3]
+
+    def add(self):
+        # Add the result object to the RESULT table
+        sql_cmd = f'''INSERT INTO RESULT(assessmentID, enrolmentID, resultDate, mark) VALUES(?, ?, ?, ?)'''
+        values = (self.assessmentID, self.enrolmentID, self.resultDate, self.mark)
+        execute(sql_cmd, values)
+
+
+if __name__ == '__main__':
+    enrolments = get_enrolments_list()
+    e1 = enrolments[0]
+    print(e1.id)
+    print(e1.studentID)
+    print(e1.student_name)
+    print(e1.year_string)

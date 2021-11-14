@@ -9,18 +9,16 @@
 }
 </style> <!-- dont show required dot, since its not actually required to update any fields -->
 {% endblock %}
-
-{% block title %}Update Programme{% endblock %}
+{% block title %}Delete Programme{% endblock %}
 {% block content %}
 
 <div class="container">
+    <h1>Delete Programme</h1>
 
-    <h1>Update Programme</h1>
     <hr>
+    <form class="form-horizontal" id="deleteProgrammeForm" role="form" action="{{url_for('deleteprogramme')}}" method="POST">
 
-    <form class="form-horizontal" id="updateCourseForm" role="form" action="{{url_for('updateprogramme')}}" method="POST">
-
-        <div class="form-group">
+        <div class="form-group required">
             <label id="programmesDropdownLabel" class="col-sm-2 control-label">Programmes:</label>
             <div class="col-sm-8">
                 <select class="form-control" id="selectedProgramme" name="selectedProgramme" required>
@@ -32,39 +30,36 @@
             </div>
         </div> <!-- Programme Dropdown -->
 
-        <div class="form-group">
+         <div class="form-group">
             <label for="programmeID" class="col-sm-2 control-label">ID:</label>
             <div class="col-sm-2">
                 <input type="text" class="form-control" id="programmeID" name="programmeID" placeholder="ID" maxlength="32" minlength="1" readonly>
             </div>
         </div> <!-- Programme ID-->
 
-        <div class="form-group required">
+        <div class="form-group">
             <label for="programmeName" class="col-sm-2 control-label">Name:</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="programmeName" name="programmeName" placeholder="Programme name" maxlength="32" minlength="1" required>
+                <input type="text" class="form-control" id="programmeName" name="programmeName" placeholder="Programme name" maxlength="32" minlength="1" readonly>
             </div>
         </div> <!-- Programme Name -->
 
-        <div class="form-group required">
+        <div class="form-group">
             <label for="level" class="col-sm-2 control-label">Level:</label>
             <div class="col-sm-3">
-                <input type="number" class="form-control" id="level" name="level" placeholder="Level" min="1" max="10" required>
+                <input type="number" class="form-control" id="level" name="level" placeholder="Level" min="1" max="10" readonly>
             </div>
         </div> <!-- Level -->
 
         <div class="form-group">
-
             <div class="col-sm-10">
-
-                <button type="submit" class="btn btn-primary">Update Programme</button>
-            </div>
-
-            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>
+                <button type="submit" class="btn btn-warning">Delete Programme</button>
+            </div> <!-- Delete Programme Button -->
+            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a> <!-- Cancel Button -->
         </div> <!-- Buttons -->
 
     </form>
 </div>
 
-<script src="{{url_for('static', filename='js/updateprogramme.js')}}"></script> <!-- load js -->
+<script src="{{url_for('static', filename='js/deleteprogramme.js')}}"></script> <!-- load js -->
 {% endblock %}

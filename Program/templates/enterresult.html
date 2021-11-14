@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block customStyle %}
+<style>
+.red-dot:before {
+    color: red;
+    content: "*";
+    margin-left: -8px;
+}
+</style>
+{% endblock %}
+{% block title %}Enter Result{% endblock %}
+{% block content %}
+
+<div class="container">
+
+    <h1>Enter Result</h1>
+    <hr>
+
+    <form class="form-horizontal" id="enterResultForm" role="form" action="{{url_for('enterresult')}}" method="POST">
+        <h3 class="red-dot">Select Assessment:</h3>
+
+        <div class="form-group required">
+            <div class="col-sm-8">
+                <select class="form-control" id="selectedAssessment" name="selectedAssessment" required>
+                    <option selected value="">Select an assessment</option>
+                    {% for assessment in assessments %}
+                    <option value="{{assessment.id}}">{{assessment.courseID}}   {{assessment.number}} {{ assessment.name }} {{ assessment.course_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div> <!-- Assessment Dropdown -->
+
+        <h3>Selected Assessment:</h3>
+
+        <div class="form-group">
+            <label for="programmeID" class="col-sm-2 control-label">Number:</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="assessmentNumber" name="assessmentNumber" placeholder="number" maxlength="32" minlength="1" readonly>
+            </div>
+        </div> <!-- Assessment Number -->
+
+        <div class="form-group">
+            <label for="assessmentName" class="col-sm-2 control-label">Name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="assessmentName" name="assessmentName" placeholder="Assessment name" maxlength="32" minlength="1" readonly>
+            </div>
+        </div> <!-- Assessment Name -->
+
+        <div class="form-group">
+            <label for="level" class="col-sm-2 control-label">Max Mark:</label>
+            <div class="col-sm-2">
+                <input type="number" class="form-control" id="maximumMark" name="maximumMark" placeholder="Mark" min="50" max="200" readonly>
+            </div>
+        </div> <!-- Level -->
+
+        <div class="form-group">
+            <label for="assessmentName" class="col-sm-2 control-label">Course Name:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="courseName" name="courseName" placeholder="Course name" maxlength="32" minlength="1" readonly>
+            </div>
+        </div> <!-- Course Name -->
+
+        <h3 class="red-dot">Select Enrolment:</h3>
+        <div class="form-group required">
+            <div class="col-sm-8">
+                <select class="form-control" id="selectedEnrolment" name="selectedEnrolment" required>
+                    <option selected value="">Select an enrolment</option>
+                    {% for enrolment in enrolments %}
+                    <option value="{{enrolment.id}}">{{enrolment.student_name}} {{enrolment.year_string}}   {{ enrolment.semester }} {{ enrolment.status }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div> <!-- Enrolment Dropdown -->
+
+       <h3>Enter Information:</h3>
+
+        <div class="form-group required">
+            <label for="level" class="col-sm-2 control-label">Mark:</label>
+            <div class="col-sm-3">
+                <input type="number" class="form-control" id="mark" name="mark" placeholder="Mark" min="0" max="200" required>
+            </div>
+        </div> <!-- Result Mark -->
+
+        <div class="form-group required">
+            <label for="level" class="col-sm-2 control-label">Date:</label>
+            <div class="col-sm-3">
+                <input type="date" class="form-control" id="date" name="date" placeholder="Date" required>
+            </div>
+        </div> <!-- Result Date -->
+
+        <small style="color: red">* Required Fields</small> <!-- Required small text -->
+
+        <div class="form-group">
+
+            <div class="col-sm-10">
+
+                <button type="submit" class="btn btn-primary">Update Programme</button>
+            </div>
+
+            <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>
+        </div> <!-- Buttons -->
+
+    </form>
+</div>
+
+<script src="{{url_for('static', filename='js/enterresult.js')}}"></script> <!-- load js -->
+{% endblock %}
