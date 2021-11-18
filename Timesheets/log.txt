@@ -1,14 +1,14 @@
 MONDAY
-1:00PM - 6:00PM Database
+1:00PM - 1:30PM Minor Page Improvements
+1:30PM - 2:00PM Database Fixes
+2:00PM - 5:00PM Data Entry
 TUESDAY
-12:00PM - 1:00PM Enviroment Setup
-1:00PM - 4:00PM Course and Enviroment classes
-
+12:00PM - 3:00PM Add Programme HTML and backend
+4:00PM - 6:00PM Update Programme HTML and backend
 WEDNESDAY
-
-4:00PM - 6:00PM Backend
+3:30PM - 3:45PM Meeting
 THURSDAY
-11:00AM - 4:00PM Add course html and backend
+2:00PM - 7:00PM Enter Result HTML and backend
 FRIDAY
-12:00pm  - 4:00PM Update course html and backend
-5:00PM - 6:00PM Delete course html and backend
+12:30PM- 1:00PM Delete Course HTML Fixes
+1:00PM - 1:45PM Delete programme HTML and backend
