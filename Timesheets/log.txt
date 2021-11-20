@@ -1,14 +1,9 @@
 MONDAY
-1:00PM - 1:30PM Minor Page Improvements
-1:30PM - 2:00PM Database Fixes
-2:00PM - 5:00PM Data Entry
+
 TUESDAY
-12:00PM - 3:00PM Add Programme HTML and backend
-4:00PM - 6:00PM Update Programme HTML and backend
+
 WEDNESDAY
-3:30PM - 3:45PM Meeting
+2:00PM - 5:00PM Database Testing
 THURSDAY
-2:00PM - 7:00PM Enter Result HTML and backend
+1:30PM - 5:30PM Database Testing
 FRIDAY
-12:30PM- 1:00PM Delete Course HTML Fixes
-1:00PM - 1:45PM Delete programme HTML and backend
