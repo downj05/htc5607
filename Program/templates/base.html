@@ -70,7 +70,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 <!-- display any messages we show the user -->
-{% for msg in get_flashed_messages()%}
+{% for msg in get_flashed_messages() %}
   <div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       {{msg}}
@@ -94,7 +94,7 @@
       let currentPageButton = $('#{{ request.endpoint }}')
         currentPageButton.addClass("active");
       let pageButtonOuterParent = currentPageButton.parent().parent()
-      console.log(pageButtonOuterParent.prop('tagName'))
+
       if (pageButtonOuterParent.prop('tagName') === 'LI') {
           pageButtonOuterParent.addClass("active");
       }

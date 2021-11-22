@@ -1,9 +1,10 @@
-MONDAY
-
-TUESDAY
-
-WEDNESDAY
+MONDAY - 15th
+Use Case Testing
+TUESDAY - 16th
+Use Case Testing
+WEDNESDAY - 17th
 2:00PM - 5:00PM Database Testing
-THURSDAY
+THURSDAY - 18th
 1:30PM - 5:30PM Database Testing
-FRIDAY
+FRIDAY - 19th
+Training Video

@@ -9,8 +9,15 @@
 </style>
 {% endblock %}
 {% block title %}Enter Result{% endblock %}
-{% block content %}
 
+<!-- display error if we tried to make a result that already exists -->
+{% block content %}
+    {% if assignmentError %}
+    <div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      The selected assessment and enrolment already has a result!
+</div>
+    {% endif %}
 <div class="container">
 
     <h1>Enter Result</h1>
@@ -94,7 +101,7 @@
 
             <div class="col-sm-10">
 
-                <button type="submit" class="btn btn-primary">Update Programme</button>
+                <button type="submit" class="btn btn-primary">Enter Result</button>
             </div>
 
             <a href="{{url_for('home')}}" class="btn btn-danger" role="button">Cancel</a>

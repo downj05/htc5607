@@ -53,3 +53,9 @@ dropdown = $('#selectedCourse');
 dropdown.change(function(event) {
     getCourseInfo(dropdown.val());
 });
+
+document.querySelector('#updateCourseForm').addEventListener("submit", function(e){
+        if(!window.confirm("Are you sure you want to update the course?")){
+            e.preventDefault();    //stop form from submitting
+        }
+}); // confirmation box

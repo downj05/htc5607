@@ -153,7 +153,6 @@ def get_assessments_from_course(course):
     cur.execute(sql_cmd, (course_id,))
     return cur.fetchall()
 
-
 class Programme:
     """
     Programme class, has its attributes, and an add method.
@@ -278,6 +277,22 @@ class Result:
         sql_cmd = f'''INSERT INTO RESULT(assessmentID, enrolmentID, resultDate, mark) VALUES(?, ?, ?, ?)'''
         values = (self.assessmentID, self.enrolmentID, self.resultDate, self.mark)
         execute(sql_cmd, values)
+
+    def check_assignments(self):
+        '''
+        Check if the results assessmentID and enrolmentID are already
+        part of a result.
+        Returns True if the result is already assigned, False if otherwise.
+        :return: boolean
+        '''
+        sql_cmd = f'''SELECT * FROM RESULT WHERE assessmentID=? AND enrolmentID=?'''
+        values = (self.assessmentID, self.enrolmentID)
+        cur = conn.cursor()
+        cur.execute(sql_cmd, values)
+        if len(cur.fetchall()) > 0:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':

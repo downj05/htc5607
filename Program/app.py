@@ -236,11 +236,16 @@ def enterresult():
         resultDate = int(datetime.strptime(request.form["date"], '%Y-%m-%d').timestamp())
 
         result = tables.Result((selectedAssessment,selectedEnrolment,resultDate,resultMark))
-        result.add()
-        flash("Result added successfully!")
-        return render_template('enterresult.html', assessments=tables.get_assessments_list(),
-                               enrolments=tables.get_enrolments_list(),continuePrompt=True,
-                               continueMessage="Would you like to enter another result?")
+        if result.check_assignments():
+            return render_template('enterresult.html', assessments=tables.get_assessments_list(),
+                                   enrolments=tables.get_enrolments_list(),
+                                   assignmentError=True)
+        else:
+            result.add()
+            flash("Result added successfully!")
+            return render_template('enterresult.html', assessments=tables.get_assessments_list(),
+                                   enrolments=tables.get_enrolments_list(), continuePrompt=True,
+                                   continueMessage="Would you like to enter another result?")
 
 @app.route('/api/<command>', methods=['GET', 'POST'])
 @login_required
