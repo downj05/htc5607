@@ -1,3 +1,4 @@
+
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
@@ -58,8 +59,11 @@ A web-application for assessment 2 of the HTC5607 course.
 
 <!-- GETTING STARTED -->
 ## Getting Started
+## Installation
 
-Clone the github repo with `git clone https://github.com/downj05/htc5607.git`<br>
+Clone the GitHub repo with `git clone https://github.com/downj05/htc5607.git`<br>
+CD into the program directory in the repository with `cd htc5607/program`<br>
+Install the requirements with `pip install -r requirements.txt` <br>
 Run the application with `python app.py`<br>
 Login to the application using either `p_admin` or `c_admin` with `Password1` as the password<br>
 

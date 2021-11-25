@@ -28,3 +28,9 @@ dropdown = $('#selectedProgramme');
 dropdown.change(function(event) {
     getProgrammeInfo(dropdown.val());
 });
+
+document.querySelector('#updateProgrammeForm').addEventListener("submit", function(e){
+        if(!window.confirm("Are you sure you want to update the programme?")){
+            e.preventDefault();    //stop form from submitting
+        }
+}); // confirmation box

@@ -1,0 +1,50 @@
+Introduction:
+	I am Jason, I am the head administrator at Balham College.
+	I am here to present our web application, and show some of its features.
+	I will talk about the projects background, give some demonstrations,
+	show what I learnt in its creation, and then we can take questions.
+
+Project Background:
+	Balham College needed an information system to manage its courses, programmes and results
+	The College's web interface functions in the browser through a website
+	We opted for a website as it is cross platform and not dependant on the user installing it
+
+Demonstration:
+
+	"Lets start by logging in"
+	Log in (p_admin Password1)
+	Describe main menu, nav bar etc
+	"Lets say we need to add a course to the college"
+	Add a Course:
+		Show off features such as number ticker, describe interface
+		Add a course with following data
+		Name: "Hardwae Fundamentals" - Hardware is mispelt intentionally
+		Credits: "15"
+		Fee: "400.00"
+		Status: "Current"
+	"Lets take a look at the course we added, along with all of the others"
+	Produce Report:
+		Describe layout, it looks similar to the last one
+		Generate report
+		Describe the information we are shown
+	"Looks like we made a mistake, lets fix that"
+	Update Course:
+		Select "Hardwae Fundamentals"
+		Fix name to "Hardware Fundamentals"
+		Close
+	"Lets say that the college is no longer giving a certificate in game design"
+	Delete Programme:
+		"We can select our game design course"
+		Delete programme "Certificate in Game Design"
+
+
+	"With that, you can see the functionality of this website, and how easy it is to quickly manipulate
+	courses and programmes"
+What Have I Learnt:
+	Go Off Slide
+
+References:
+	"These are the various third party frameworks that power the project"
+	"Their websites can be seen at the following links"
+
+Questions:

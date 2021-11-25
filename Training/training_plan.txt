@@ -1,0 +1,30 @@
+Introduction: 00:00
+	Introduce Self:
+		Name (Jason Down)
+		Role ()
+Training Purpose: 00:20
+	How to use Balham College Web Interface
+Training Objectives: 00:30
+	Logging In
+	Add Course
+	Update Course
+	Delete Course
+	Produce Course Report
+	Add Programme
+	Update Programme
+	Delete Programme
+	Enter Result
+Go Through Each Use Case 01:00
+	Logging In
+	Add Course
+	Update Course
+	Delete Course
+	Produce Course Report
+	Add Programme
+	Update Programme
+	Delete Programme
+	Enter Result
+Summarise: 05:00
+	Audience knows how to Log in, manipulate courses and programmes, add results and produce reports
+Leave contact information: 06:00
+	downj05@myunitec.ac.nz
